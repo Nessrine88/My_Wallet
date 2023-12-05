@@ -1,6 +1,14 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  # Example for development.rb and production.rb
+Rails.application.configure do
+  # ... other configurations
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+end
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
