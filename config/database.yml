@@ -1,3 +1,18 @@
+# rails db:drop
+# update credentials ("developer")
+
+# - CREATE USER developer WITH PASSWORD 'developer' CREATEDB;
+# - ALTER USER developer CREATEDB;
+# - SELECT pg_reload_conf();
+# close command prompt
+
+# rails db:create
+# rails db:migrate
+
+# Test for the application to run
+#
+# - GRANT ALL PRIVILEGES ON DATABASE recipe_app_development TO developer;
+
 # PostgreSQL. Versions 9.3 and up are supported.
 #
 # Install the pg driver:
@@ -22,12 +37,14 @@ default: &default
 development:
   <<: *default
   database: budget_app_development
+  username: developer
+  password: developer
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
   # When left blank, PostgreSQL will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: budget_app
+  #username: recipe_app
 
   # The password associated with the PostgreSQL role (username).
   #password:
@@ -56,6 +73,8 @@ development:
 test:
   <<: *default
   database: budget_app_test
+  username: developer
+  password: developer
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,4 +100,4 @@ production:
   <<: *default
   database: budget_app_production
   username: budget_app
-  password: <%= ENV["BUDGET_APP_DATABASE_PASSWORD"] %>
+  password: <%= ENV["RECIPE_APP_DATABASE_PASSWORD"] %>
