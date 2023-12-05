@@ -1,0 +1,26 @@
+/* app/assets/stylesheets/custom_styles.scss */
+
+/* Custom styles for the form */
+body {
+    background-color: #3778c2;
+    color: white;
+    padding-top: 50px;
+  }
+  
+  .form-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Apply color to the submit button */
+  .btn-custom {
+    background-color: #5fb523;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
