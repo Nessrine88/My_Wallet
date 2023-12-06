@@ -1,8 +1,8 @@
 class Group < ApplicationRecord
-    belongs_to :user
-    has_many :entities
-    belongs_to :users, foreign_key: 'user_id'
-    
-    validates :name, presence: true
-  end
+  # Associations
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+  has_many :entities, foreign_key: 'group_id'
   
+  # Validations
+  validates :name,:icon, presence: true
+end

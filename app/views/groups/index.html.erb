@@ -1,0 +1,23 @@
+<div class="container-fluid bg-light-gray py-4">
+  <h1 class="col-md-6 offset-md-3 mt-4">Categories</h1>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+      <ul class="list-group bg-white">
+        <% @groups.each do |group| %>
+          <li class="list-group-item d-flex align-items-center mb-3">
+            <%= link_to(entities_path(category_id: group.id)) do %>
+              <%= image_tag group.icon, class: "img-fluid img-thumbnail me-3", style: "max-width: 50px;" %>
+            <% end %>
+
+            <%= link_to group.name, entities_path(category_id: group.id) %>
+
+            <!-- Total amount of transactions (if needed) -->
+            <span class="ms-auto">
+              <%# Total Amount: <%= number_to_currency(group.total_amount) %> 
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
