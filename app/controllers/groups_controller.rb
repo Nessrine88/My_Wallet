@@ -3,13 +3,16 @@ class GroupsController < ApplicationController
 
     def index
         @groups= Group.all
+        @groups = Group.all.includes(:entities)
+        @group_totals = {}
+        @groups.each do |group|
+        @group_totals[group.id] = group.entities.sum(:amount)
+        end
     end
-    def show 
-    end
-
-    def transactions
-        @category = Category.find(params[:id]) # Fetch the category
-        @transactions = @category.transactions # Fetch transactions for the category
-        # Additional logic as needed
+    def show
+        @group = Group.find(params[:id])
+        @entities = @group.entities
+        @entities = @group.entities.order(created_at: :desc)
       end
+    
 end

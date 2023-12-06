@@ -5,16 +5,10 @@
       <ul class="list-group bg-white">
         <% @groups.each do |group| %>
           <li class="list-group-item d-flex align-items-center mb-3">
-            <%= link_to(entities_path(category_id: group.id)) do %>
-              <%= image_tag group.icon, class: "img-fluid img-thumbnail me-3", style: "max-width: 50px;" %>
-            <% end %>
-
-            <%= link_to group.name, entities_path(category_id: group.id) %>
-
-            <!-- Total amount of transactions (if needed) -->
-            <span class="ms-auto">
-              <%# Total Amount: <%= number_to_currency(group.total_amount) %> 
-            </span>
+            <%= image_tag group.icon, class: "img-fluid img-thumbnail me-3", style: "max-width: 50px;" %>
+            <%= link_to group.name, group_path(group.id) %>
+            <% total = @group_totals[group.id] || 0 %>
+            Total Amount: <%= number_to_currency(total) %>
           </li>
         <% end %>
       </ul>

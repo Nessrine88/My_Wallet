@@ -37,4 +37,45 @@ def create_user_with_data(name, email, password)
   create_group_with_entities("Bills & Subscriptions", "https://cdn-icons-png.flaticon.com/512/4730/4730393.png", 1)
   create_group_with_entities("Travel", "https://cdn.iconscout.com/icon/premium/png-256-thumb/travel-5-81396.png", 1)
   create_group_with_entities("Personal Care", "https://w7.pngwing.com/pngs/668/474/png-transparent-personal-care-computer-icons-room-comb-miscellaneous-text-room.png", 1)
+
+  def create_entity_with_groups(name, amount, author_id, group_id)
+    author = User.find_by(id: author_id)
+    
+    if author.present?
+      group = Group.find_by(id: group_id)
+      
+      if group.present?
+        entity = Entity.create!(name: name, amount: amount, author_id: author_id, group_id: group_id)
+      else
+        puts "Group with ID #{group_id} not found."
+      end
+    else
+      puts "Author with ID #{author_id} not found."
+    end
+  end
+  
+# For Utilities category
+create_entity_with_groups("Electricity Bill", 80.00, 1, 1)
+create_entity_with_groups("Water Bill", 45.50, 1, 1)
+create_entity_with_groups("Gas Bill", 60.00, 1, 1)
+create_entity_with_groups("Internet Subscription", 50.00, 1, 1)
+create_entity_with_groups("Phone Bill", 35.00, 1, 1)
+create_entity_with_groups("Waste Management Fee", 20.00, 1, 1)
+
+# For Transportation category
+create_entity_with_groups("Monthly Bus Pass", 100.00, 1, 2)
+create_entity_with_groups("Fuel for Car", 40.00, 1, 2)
+create_entity_with_groups("Taxi Fare", 25.00, 1, 2)
+create_entity_with_groups("Train Tickets", 55.00, 1, 2)
+create_entity_with_groups("Uber Rides", 30.00, 1, 2)
+create_entity_with_groups("Car Maintenance", 80.00, 1, 2)
+
+# For Entertainment category
+create_entity_with_groups("Movie Tickets", 30.00, 1, 3)
+create_entity_with_groups("Gaming Subscription", 15.00, 1, 3)
+create_entity_with_groups("Concert Tickets", 50.00, 1, 3)
+create_entity_with_groups("Book Purchases", 40.00, 1, 3)
+create_entity_with_groups("Streaming Services", 20.00, 1, 3)
+create_entity_with_groups("Theme Park Tickets", 75.00, 1, 3)
+
   
