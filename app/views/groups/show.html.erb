@@ -9,4 +9,10 @@ Total Amount: <%= number_to_currency(total) %>
     </li>
   <% end %>
 </ul>
+
+<% if @group.entities.empty? %>
+  <p>No transactions found for this group.</p>
+  <%= link_to "Add Transaction", new_entity_path(group_id: @group.id), class: "btn btn-primary" %>
+<% else %>
 <%= link_to "Add a transaction", new_entity_path(entity_id: @group.entities.first.id) %>
+<% end %>

@@ -7,19 +7,25 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @group = Group.find(params[:id])
     @entities = @group.entities.order(created_at: :desc)
   end
-
-  def create
-    @group = Group.new(group_params)
+  def new
+    @group= Group.new
+  end
   
+    def create
+      @group = Group.create(group_params)
+      @group.author = current_user
     if @group.save
-      redirect_to groups_path, notice: 'Group was successfully created.'
+   flash[:notice] ='Group was successfully created.'
     else
-      render :new
+      flash[:notice] = @group.errors.full_messages.join(", ")
+      render 'new'
     end
   end
+
   
   private
   
