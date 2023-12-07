@@ -20,6 +20,7 @@ class GroupsController < ApplicationController
       @group.author = current_user
     if @group.save
    flash[:notice] ='Group was successfully created.'
+   redirect_to groups_path
     else
       flash[:notice] = @group.errors.full_messages.join(", ")
       render 'new'
