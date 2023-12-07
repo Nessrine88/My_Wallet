@@ -1,0 +1,18 @@
+<%= form_with model: Entity.new, url: entities_path, method: :post do |form| %>
+  <div>
+    <%= form.label :group_id, "Select Group" %>
+    <%= form.collection_select :group_id, Group.all, :id, :name, prompt: "Select a group" %>
+    <!-- Assuming Group.all fetches all available groups; adjust the collection based on your needs -->
+  </div>
+  <div>
+    <%= form.label :name, "Transaction Name" %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :amount, "Amount" %>
+    <%= form.text_field :amount %>
+  </div>
+  <div>
+    <%= form.submit "Create a Transaction" %>
+  </div>
+<% end %>

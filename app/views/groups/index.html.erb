@@ -1,17 +1,18 @@
-<div class="container-fluid bg-light-gray py-4">
-  <h1 class="col-md-6 offset-md-3 mt-4">Categories</h1>
+<div class="container-fluid py-4" style="background-color: #3778c2;">
+  <h1 class="text-center text-white mt-4">Categories</h1>
   <div class="row">
-    <div class="col-md-6 offset-md-3 mt-4">
+    <div class="col-md-12 mt-4">
       <ul class="list-group bg-white">
         <% @groups.each do |group| %>
           <li class="list-group-item d-flex align-items-center mb-3">
             <%= image_tag group.icon, class: "img-fluid img-thumbnail me-3", style: "max-width: 50px;" %>
             <%= link_to group.name, group_path(group.id) %>
             <% total = @group_totals[group.id] || 0 %>
-            Total Amount: <%= number_to_currency(total) %>
+            <span class="ms-auto text-dark">Total Amount: <%= number_to_currency(total) %></span>
           </li>
         <% end %>
       </ul>
     </div>
   </div>
+  <%= button_to "Add a category", new_group_path, method: :get, class: 'col-md-3 offset-md-3 mt-4 btn btn-success', style: 'background-color: #5fb523; color: #434b54;' %>
 </div>

@@ -1,9 +1,12 @@
-<h1><%= @group.name%></h1>
+<h1><%= @group.name %></h1>
+<% total = @group_totals[@group.id] || 0 %>
+Total Amount: <%= number_to_currency(total) %>
 <ul>
-  <% @entities.each do |entity| %>
+  <% @group.entities.each do |entity| %>
     <li>
-        <strong><%= entity.name %></strong>
-      Amount: <%= entity.amount %>$
+      <strong><%= entity.name %></strong>
+      Amount: <%= number_to_currency(entity.amount) %>
     </li>
   <% end %>
 </ul>
+<%= link_to "Add a transaction", new_entity_path(entity_id: @group.entities.first.id) %>
