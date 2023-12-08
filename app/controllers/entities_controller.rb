@@ -5,17 +5,20 @@ class EntitiesController < ApplicationController
 
   def show 
     @user = current_user
-    @group = Group.find(params[:id])
+    @entity = Entity.find(params[:id])
+    @group = @entity.group # Assuming Entity has a 'belongs_to :group' association
   end
+  
 
   def new
+     @group = Group.find(params[:group_id])
     @entity = Entity.new
   end
 
   def create
-    @entity = Entity.new(entity_params)
-    @entity.author = current_user
-
+    @entity = Entity.create(entity_params)
+    @entity.author= current_user
+  
     if @entity.save
       flash[:success] = 'Transaction created successfully'
       redirect_to group_path(@entity.group_id)
@@ -24,6 +27,8 @@ class EntitiesController < ApplicationController
       render :new
     end
   end
+  
+  
 
   private
 

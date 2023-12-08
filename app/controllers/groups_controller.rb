@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
   end
   
     def create
-      @group = Group.create(group_params)
+      @group = Group.create
       @group.author = current_user
     if @group.save
    flash[:notice] ='Group was successfully created.'
@@ -30,9 +30,9 @@ class GroupsController < ApplicationController
   
   private
   
-  def group_params
-    params.require(:group).permit(:name, :icon)
-  end
+  # def group_params
+  #   params.require(:group).permit(:name, :icon)
+  # end
 
   def calculate_group_totals
     @group_totals = {}

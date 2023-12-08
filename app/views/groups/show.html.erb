@@ -5,6 +5,7 @@ Total Amount: <%= number_to_currency(total) %>
   <% @group.entities.each do |entity| %>
     <li>
       <strong><%= entity.name %></strong>
+      <p><%= entity.created_at.strftime("%B %d, %Y %H:%M:%S") %></p>
       Amount: <%= number_to_currency(entity.amount) %>
     </li>
   <% end %>
@@ -12,7 +13,8 @@ Total Amount: <%= number_to_currency(total) %>
 
 <% if @group.entities.empty? %>
   <p>No transactions found for this group.</p>
-  <%= link_to "Add Transaction", new_entity_path(group_id: @group.id), class: "btn btn-primary" %>
+  <%= link_to "Add Transaction", new_group_entity_path(@group), class: "btn btn-primary" %>
 <% else %>
-<%= link_to "Add a transaction", new_entity_path(entity_id: @group.entities.first.id) %>
+  <%= link_to "Add a transaction", new_group_entity_path(@group) %>
 <% end %>
+
