@@ -1,6 +1,6 @@
 databases:
   - name: myWallet
-    databaseName: myWallet
+    databaseName: budget_app_development
     user: developer
 
 services:
