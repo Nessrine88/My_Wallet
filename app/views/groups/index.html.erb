@@ -1,0 +1,19 @@
+<div class="head">
+  <div class="list" >
+      <ul>
+        <% @groups.each do |group| %>
+          <li>
+            <div class="left">
+            <%= image_tag(group.icon, style: "max-width: 50px;") %>
+            <%= link_to(group.name, group_path(group.id)) %>
+            </div>
+            <div class="tot">
+            <% total = @group_totals[group.id] || 0 %>
+            <span>Total: <%= number_to_currency(total) %></span>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+  <%= button_to("Add a category", new_group_path, method: :get, class: 'col-md-3 offset-md-3 mt-4 btn btn-success') %>
+</div>
