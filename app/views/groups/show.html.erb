@@ -1,0 +1,24 @@
+<div class="head" >
+
+   <div class="list" >
+  <ul>
+    <% @group.entities.each do |entity| %>
+      <li>
+        <div>
+        <h3><%= entity.name %></h3>
+        <p class="date" ><%= entity.created_at.strftime("%B %d, %Y %H:%M:%S") %></p>
+        </div>
+        <div>
+        <p class="money" >Amount: <%= number_to_currency(entity.amount) %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+  <% if @group.entities.empty? %>
+    <p>No transactions found for this group.</p>
+    <%= link_to "Add Transaction", new_group_entity_path(@group), class: "btn btn-primary" %>
+  <% else %>
+    <%= button_to "Add a transaction", new_group_entity_path(@group), method: :get, class: 'your-button-class' %>
+  <% end %>
+</body>

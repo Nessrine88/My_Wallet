@@ -1,0 +1,79 @@
+.list li {
+  background-color: #fff;
+  width: 100%;
+  box-shadow: 0 0 5px rgba(67, 75, 84, 0.3);
+  padding: 2rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #434b54;
+}
+
+.date {
+  font-size: 0.8rem;
+  color: #434b54;
+  margin: 0.5rem;
+}
+
+.head button {
+  background-color: #5fb523;
+  color: #fff;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  border: none;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.left img {
+  border: 2px solid #f0f2f1;
+  margin-right: 1rem;
+}
+
+.left a {
+  font-size: 1.5rem;
+}
+
+.tot span {
+  font-size: 1.5rem;
+}
+
+/* form */
+
+.form-container {
+  width: 100%;
+  box-shadow: 0 0 5px rgba(67, 75, 84, 0.3);
+  padding: 2rem;
+  margin: 1rem 0;
+  color: #434b54;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #f0f2f1;
+}
+
+.btn-primary {
+  background-color: #5fb523;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #4a971f; /* Slightly darker shade on hover */
+}
