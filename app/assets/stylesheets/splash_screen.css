@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 3rem;
+  font-family: 'proxima-nova', sans-serif;
 }
 
 .checkpoints {

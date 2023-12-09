@@ -24,7 +24,7 @@
 
 # 📖 [My_Wallett] <a name="about-project"></a>
 
-**[My_Wallett]]**
+**[My_Wallett]**
  this is mobile web application designed for budget management. The app enables users to handle their finances efficiently by organizing transactions linked to specific categories. This functionality offers users visibility into their spending patterns, allowing them to track expenses and understand where their money is allocated.
 
 ## 🛠 Built With <a name="built-with"></a>

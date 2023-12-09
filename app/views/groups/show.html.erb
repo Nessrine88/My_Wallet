@@ -15,10 +15,14 @@
     <% end %>
   </ul>
 </div>
+<div>
   <% if @group.entities.empty? %>
-    <p>No transactions found for this group.</p>
+    <p class= "no-transaction">No transactions found for this group.</p>
     <%= link_to "Add Transaction", new_group_entity_path(@group), class: "btn btn-primary" %>
   <% else %>
+  <div>
     <%= button_to "Add a transaction", new_group_entity_path(@group), method: :get, class: 'your-button-class' %>
+    </div>
   <% end %>
+  </div>
 </body>
