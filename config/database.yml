@@ -19,4 +19,4 @@ test:
 
 production:
   <<: *default
-  database: your_production_db_name
+  url: <%= ENV['DATABAS_URL']%>
