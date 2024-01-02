@@ -6,7 +6,7 @@ class EntitiesController < ApplicationController
   def show
     @user = current_user
     @entity = Entity.find(params[:id])
-    @group = @entity.group # Assuming Entity has a 'belongs_to :group' association
+    @group = @entity.group 
   end
 
   def new
@@ -20,7 +20,7 @@ class EntitiesController < ApplicationController
 
     if @entity.save
       flash[:success] = 'Transaction created successfully'
-      redirect_to group_path(@entity.group_id)
+      redirect_to groups_path
     else
       flash[:notice] = @entity.errors.full_messages.join(', ')
       render :new
