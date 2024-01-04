@@ -1,7 +1,7 @@
 databases:
   - name: my-wallet
-    databaseName: my-wallet
-    user: my-wallet
+    databaseName: my-wallet-app
+    user: developer
 
 services:
   - type: web

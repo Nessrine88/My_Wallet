@@ -7,13 +7,13 @@ default: &default
 
 development:
   <<: *default
-  database: my-wallet
+  database:  my-wallet-app
   username: developer
   password: developer
 
 test:
   <<: *default
-  database: my-wallet
+  database:  my-wallet-app
   username: developer
   password: developer
 
