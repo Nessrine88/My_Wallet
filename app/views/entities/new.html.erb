@@ -4,17 +4,16 @@
       <%= form.label :group_id, "Select Group" %>
       <%= form.collection_select :group_id, Group.all, :id, :name, prompt: "Select a group", class: "form-control" %>
       <!-- Assuming Group.all fetches all available groups; adjust the collection based on your needs -->
-    </div>
-    <div class="form-group">
-      <%= form.label :name, "Transaction Name" %>
+   
+    
+      <%= form.label :name, "Transaction Name" %>l
       <%= form.text_field :name, class: "form-control" %>
-    </div>
-    <div class="form-group">
+   
       <%= form.label :amount, "Amount" %>
       <%= form.text_field :amount, class: "form-control" %>
-    </div>
+      </div>
     <div>
-      <%= form.submit "Create a Transaction", class: "btn btn-primary" %>
+      <%= form.submit "Create a Transaction" %>
     </div>
   <% end %>
 </div>

@@ -7,13 +7,13 @@ default: &default
 
 development:
   <<: *default
-  database: your_development_db_name
+  database: my-wallet
   username: developer
   password: developer
 
 test:
   <<: *default
-  database: your_test_db_name
+  database: my-wallet
   username: developer
   password: developer
 

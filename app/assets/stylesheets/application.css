@@ -26,3 +26,10 @@ body {
   padding: 0;
   background-color: #f0f2f1;
 }
+
+.notice{
+  background-color: #5fb523;
+  color: #fff;
+  text-align: center;
+
+}

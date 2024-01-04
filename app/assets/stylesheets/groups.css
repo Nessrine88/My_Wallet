@@ -1,7 +1,8 @@
-
+.list {
+  height: 100vh;
+}
 .list li {
   background-color: #fff;
-  width: 100%;
   box-shadow: 0 0 5px rgba(67, 75, 84, 0.3);
   padding: 2rem;
   margin: 1rem 0;
@@ -17,16 +18,7 @@
   margin: 0.5rem;
 }
 
-.head button {
-  background-color: #5fb523;
-  color: #fff;
-  padding: 1.5rem 2rem;
-  font-size: 1rem;
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  border: none;
-}
+
 
 .left {
   display: flex;
@@ -48,9 +40,40 @@
 
 .no-transaction {
   margin: 2rem;
-  height: 50vh;
+  height: 100vh;
   font-family: 'proxima-nova', sans-serif;
-  width: 100%;
+  width: fit-content;
 }
 
 
+.green_btn {
+  margin-top: 1rem;
+  position: sticky;
+  bottom: 0;
+  background-color: #5fb523;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+.green_btn2 {
+  background-color: #5fb523;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+ 
+
+}
+.list {
+  width: auto;
+}

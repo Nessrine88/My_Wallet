@@ -1,0 +1,18 @@
+databases:
+  - name: my-wallet
+    databaseName: my-wallet
+    user: my-wallet
+
+services:
+  - type: web
+    name: my-wallet
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: my-wallet
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
