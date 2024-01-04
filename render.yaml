@@ -1,6 +1,6 @@
 databases:
   - name: my-wallet
-    databaseName: my-wallet-app
+    databaseName: my-wallet-app1
     user: developer
 
 services:
