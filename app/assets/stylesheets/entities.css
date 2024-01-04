@@ -1,0 +1,35 @@
+.form-container {
+  width: 100vh;
+  box-shadow: 0 0 5px rgba(67, 75, 84, 0.3);
+  margin-top: 1rem;
+  color: #434b54;
+  display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  margin: 1rem;
+  
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #f0f2f1;
+}
+
+
+
+.btn-primary:hover {
+  background-color: #4a971f;
+}
+
+.form_button button{
+  margin-top: 5rem;
+background-color: aquamarine;
+}
+

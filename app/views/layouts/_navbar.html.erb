@@ -1,0 +1,31 @@
+<% if user_signed_in? %>
+  <div class="navBar">
+    <div class="back">
+      <% unless request.path == groups_path %>
+        <%= link_to(groups_path) do %>
+          <%= image_tag("left-arrow.png") %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div>
+      <h1>
+        <% if defined?(@group) && @group.present? %>
+          <%= @group.name %> <br>
+          (<% total = @group_totals&.dig(@group&.id) || 0 %>
+          <%= number_to_currency(total) %>)
+        <% elsif request.path == groups_path %>
+          Categories
+        <% elsif defined?(@entity) && @entity.present? %>
+          <%= @entity.name %>
+        <% else %>
+         
+        <% end %>
+      </h1>
+    </div>
+
+    <div class="logout">
+      <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: 'logout') %>
+    </div>
+  </div>
+<% end %>

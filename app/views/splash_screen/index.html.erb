@@ -1,0 +1,19 @@
+<body>
+  <div >
+    <h1 class="signup_head">My Wallet    <%= image_tag 'free-wallet.png', alt: 'Free Wallet' %></h1>
+    <div class="checkpoints">
+      <ul class="list1">
+     <li> <h3>✓ Track and categorize expenses.</h3></li>
+       <li><h3>✓ Understand your spending habits.</h3></li>
+      <li><h3>✓ Make informed financial decisions.</h3></li>
+      </ul>
+     
+      <div class="signup-signin">
+        <form action="<%= new_user_registration_path %>" method="get" class="signup-form">
+          <button type="submit" class="btn btn-custom">Create an account</button>
+        </form>
+        <p>Already have an account? <%= link_to 'Sign In', new_user_session_path %></p>
+      </div>
+    </div>
+  </div>
+</body>
